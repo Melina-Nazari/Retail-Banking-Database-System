@@ -1,6 +1,6 @@
 # Retail Banking Database System
 
-A collaborative CPS 510 database project at Toronto Metropolitan University (Fall 2026), modeling retail banking branches, customers, accounts, employees, ATMs, and transactions using Oracle SQL.
+A collaborative CPS 510 database project at Toronto Metropolitan University, modeling retail banking branches, customers, accounts, employees, ATMs, and transactions using Oracle SQL.
 
 ## Database design
 
@@ -10,10 +10,10 @@ The schema includes eight tables, with primary keys, foreign keys, defaults, and
 
 ## Features
 
-- Relational schema and sample records (Assignments 3 and 4.1)
-- Simple SQL filtering, sorting, and aggregation (Assignment 4.1)
-- Seven advanced SQL queries covering `EXISTS`, `NOT EXISTS`, `MINUS`, `UNION`, joins, grouping, and statistics (Assignment 5)
-- Bash command-line menu for schema setup, sample-data loading, and queries (Assignment 5)
+- Relational schema and sample records 
+- Simple SQL filtering, sorting, and aggregation 
+- Seven advanced SQL queries covering `EXISTS`, `NOT EXISTS`, `MINUS`, `UNION`, joins, grouping, and statistics 
+- Bash command-line menu for schema setup, sample-data loading, and queries 
 
 ## Files
 
@@ -42,6 +42,3 @@ sqlplus /nolog
 
 Alternatively, run `bash scripts/menu.sh` after setting the `SQLPLUS_CONNECT` environment variable to your own SQL*Plus connection string. Do not commit credentials or paste real passwords into public files.
 
-## Notes
-
-This is coursework completed as a group. The advanced SQL and shell menu were adapted from the submitted Assignment 5 report; two queries received syntax corrections. Scripts have **not** been independently executed or verified against Oracle in this package. Assignment 4.2 is not included because its source has not been provided. All records should be treated as sample data.

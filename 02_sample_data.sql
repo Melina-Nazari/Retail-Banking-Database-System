@@ -1,0 +1,53 @@
+-- Transcribed from CPS510 Assignment 4.1 group report.
+-- Run sql/01_schema.sql first.
+-- Review sample data and constraints before execution.
+
+INSERT INTO branch(branch_id) VALUES(100);
+INSERT INTO branch VALUES(101, '456 Queen Street');
+INSERT INTO branch VALUES(102, '789 Gould Street');
+INSERT INTO branch VALUES(103, '203 Bond Street');
+INSERT INTO customer VALUES (1, 'John Smith', DATE '2000-05-10', '10 Main Street', '4165551234', '123456789', 'M5V1A1', 'john@email.com');
+INSERT INTO customer VALUES (2, 'Annarita MacFarlane', DATE '1966-02-26', '11 College Street', '9425907308', '489566976', 'L7E7C7', 'annarita@email.com');
+INSERT INTO customer VALUES (3, 'Carina Antoniou', DATE '1977-12-20', '12 Gerrard Street', '7535859365', '483425567', 'L4K0X1', 'carina@email.com');
+INSERT INTO customer VALUES (4, 'Louise Porras', DATE '1981-01-11', '13 Shuter Street', '5486631353', '059594457', 'L3K2A1', 'louise@email.com');
+INSERT INTO customer VALUES (5, 'Sylvia Paredes', DATE '2000-06-05', '14 Cherry Street', '9027872242', '398926998', 'L9P5T1', 'sylvia@email.com');
+INSERT INTO customer VALUES (6, 'Zinon Waiter', DATE '2007-05-03', '15 Harbour Street', '7783122918', '316868074', 'L7G3X7', 'zinon@email.com');
+INSERT INTO accounts(account_id, date_opened, account_type, customer_id) VALUES (10001, DATE '2026-09-30', 'chequing', 1);
+INSERT INTO accounts(account_id, date_opened, account_type, customer_id) VALUES (10002, DATE '2026-10-01', 'savings', 2);
+INSERT INTO accounts(account_id, date_opened, account_type, customer_id) VALUES (10003, DATE '2026-10-01', 'chequing', 3);
+INSERT INTO accounts(account_id, date_opened, account_type, customer_id) VALUES (10004, DATE '2026-10-04', 'savings', 4);
+INSERT INTO accounts(account_id, date_opened, account_type, customer_id) VALUES (10005, DATE '2026-10-06', 'chequing', 5);
+INSERT INTO accounts(account_id, date_opened, account_type, customer_id) VALUES (10006, DATE '2026-10-07', 'savings', 6);
+INSERT INTO savings_accounts(account_id, interest_rate) VALUES (10002, 0.1);
+INSERT INTO savings_accounts(account_id, interest_rate) VALUES (10004, 0.2);
+INSERT INTO savings_accounts(account_id, interest_rate) VALUES (10006, 0.05);
+INSERT INTO chequing_accounts(account_id) VALUES (10001);
+INSERT INTO chequing_accounts(account_id) VALUES (10003);
+INSERT INTO chequing_accounts(account_id) VALUES (10005);
+INSERT INTO employee VALUES (1001, 'Sarah Lee', DATE '1995-03-15', '20 Queen St', 'M5H2N2', '4165555678', 'sarah@bank.com', 'Full-Time', 30.00, 40.0, 100);
+INSERT INTO employee VALUES (1002, 'Hilda Attar', DATE '1995-03-15', '21 College Street', 'L1E8N4', '8194735638', 'sarah@bank.com', 'Full-Time', 31.00, 40.0, 100);
+INSERT INTO employee VALUES (1003, 'Hourig Clement', DATE '1995-03-15', '22 Gerrard Street', 'L9S8N2', '2504436913', 'sarah@bank.com', 'Part-Time', 34.20, 20.0, 101);
+INSERT INTO employee VALUES (1004, 'Basile Hermans', DATE '1995-03-15', '23 Shuter Street', 'L9N2K0', '8197246336', 'sarah@bank.com', 'Full-Time', 32.50, 40.0, 102);
+INSERT INTO employee VALUES (1005, 'Burhan Johnston', DATE '1995-03-15', '24 Cherry Street', 'L7C8X2', '8793953384', 'sarah@bank.com', 'Part-Time', 35.10, 20.0, 103);
+INSERT INTO employee VALUES (1006, 'Melusine Shriver', DATE '1995-03-15', '25 Harbour Street', 'M8V3V4', '2636571580', 'sarah@bank.com', 'Full-Time', 33.00, 40.0, 100);
+INSERT INTO atm VALUES (501, 'ATM-X1', 10000, 100);
+INSERT INTO atm VALUES (502, 'ATM-X1', 10000, 100);
+INSERT INTO atm VALUES (503, 'ATM-X2', 10000, 101);
+INSERT INTO atm VALUES (504, 'ATM-X2', 10000, 101);
+INSERT INTO atm VALUES (505, 'ATM-X2', 10000, 102);
+INSERT INTO atm VALUES (506, 'ATM-X1', 10000, 102);
+INSERT INTO atm VALUES (507, 'ATM-X1', 10000, 103);
+INSERT INTO atm VALUES (508, 'ATM-X3', 10000, 103);
+INSERT INTO transaction VALUES (1, 200, 'Deposit', DATE '2026-09-30', 'ATM Deposit', 10001, 501);
+INSERT INTO transaction VALUES (2, 1234.56, 'Deposit', DATE '2026-10-02', 'Paycheque', 10002, NULL);
+INSERT INTO transaction VALUES (3, 1678.90, 'Deposit', DATE '2026-10-02', 'Paycheque', 10003, NULL);
+INSERT INTO transaction VALUES (4, 50, 'Deposit', DATE '2026-10-04', 'ATM Deposit', 10004, 503);
+INSERT INTO transaction VALUES (5, 400, 'Deposit', DATE '2026-10-08', 'ATM Deposit', 10005, 508);
+INSERT INTO transaction VALUES (6, 1000, 'Deposit', DATE '2026-10-08', 'Cheque', 10006, NULL);
+INSERT INTO transaction VALUES (7, 100, 'Withdrawal', DATE '2026-10-01', 'ATM Deposit', 10001, 503);
+INSERT INTO transaction VALUES (8, 600, 'Withdrawal', DATE '2026-10-04', 'ATM Withdrawal', 10002, 505);
+INSERT INTO transaction VALUES (9, 400, 'Withdrawal', DATE '2026-10-05', 'ATM Withdrawal', 10003, 504);
+INSERT INTO transaction VALUES (10, 10, 'Withdrawal', DATE '2026-10-08', 'ATM Withdrawal', 10004, 506);
+INSERT INTO transaction VALUES (11, 45, 'Withdrawal', DATE '2026-10-10', 'Bank Withdrawal', 10005, NULL);
+INSERT INTO transaction VALUES (12, 88.88, 'Withdrawal', DATE '2026-10-15', 'Bank Withdrawal', 10006, NULL);
+COMMIT;
